@@ -1,12 +1,6 @@
 -- ~/.config/nvim/lua/config/settings.lua
 local opt = vim.opt
 
--- Set working directory (if needed)
-vim.cmd("cd ~/dev/")
-vim.o.wrap = false
-vim.o.sidescroll = 1
-vim.o.sidescrolloff = 5
-
 -- General Settings
 opt.number = true
 opt.relativenumber = false
