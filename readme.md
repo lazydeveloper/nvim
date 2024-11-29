@@ -1,4 +1,4 @@
-### nvim-cheetsheet (from vps)
+### nvim-cheetsheet (from github - nov28)
 #### Compile Java code
 
     `:!javac %` to compile and `!java` to run it 
