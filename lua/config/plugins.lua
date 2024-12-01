@@ -80,26 +80,17 @@ require('lazy').setup({
     end
   },
 
-
+ -- Lualine Plugin
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
 
-  {
-    'preservim/nerdtree',
-    config = function()
-      -- Optional: You can add additional NERDTree configuration here
-    end,
-  },
-
-  {
-    -- coco.vim lsp manager
+  -- coco.vim lsp manager
+    {
     'neoclide/coc.nvim',
     branch = 'release',
   },
-
-
 
   -- Treesitter
   {
@@ -143,6 +134,14 @@ require('lazy').setup({
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
-  }
+    },
+  },
+
+  -- Nvim Terminal
+  {
+  -- amongst your other plugins
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = true,
+    },
 })

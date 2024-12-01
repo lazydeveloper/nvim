@@ -36,3 +36,20 @@ vim.api.nvim_create_user_command("Term", function()
     vim.cmd("split | terminal")
 end, {})
 
+-- Adding custom commands for toggleterm
+vim.api.nvim_create_user_command('Term', function(opts)
+  local args = opts.args ~= '' and ' ' .. opts.args or ''
+  vim.cmd('ToggleTerm' .. args)
+end, { nargs = '?', force = true })
+
+-- Use a prefix for numbered commands to avoid starting with a number
+vim.api.nvim_create_user_command('Term1', function(opts)
+  local args = opts.args ~= '' and ' ' .. opts.args or ''
+  vim.cmd('ToggleTerm1' .. args)
+end, { nargs = '?', force = true })
+
+vim.api.nvim_create_user_command('Term2', function(opts)
+  local args = opts.args ~= '' and ' ' .. opts.args or ''
+  vim.cmd('ToggleTerm2' .. args)
+end, { nargs = '?', force = true })
+-- Add more commands as needed for additional terminals
