@@ -119,3 +119,15 @@ map('n', 'K', ':call CocActionAsync("doHover")<CR>', opts)
 -- Enable Leader + f to format the code using coc.vin
 vim.api.nvim_set_keymap('n', '<leader>f', ':call CocAction("format")<CR>', { noremap = true, silent = true })
 
+-- Telescope Key Mappings
+vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fr', ':lua require("telescope.builtin").oldfiles()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fc', ':lua require("telescope.builtin").git_commits()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require("telescope.builtin").git_status()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ft', ':lua require("telescope.builtin").treesitter()<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<S-h>', ':bprev<CR>', { noremap = true, silent = true }) -- Move to the previous buffer
+vim.api.nvim_set_keymap('n', '<S-l>', ':bnext<CR>', { noremap = true, silent = true }) -- Move to the next buffer
