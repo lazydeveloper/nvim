@@ -43,7 +43,39 @@ function _G.CompileAndRunJava()
     -- Execute the compile and run commands
     vim.cmd('! ' .. compile_command .. ' && ' .. run_command)
   end
+
+  -- function to dynamically run java and javascript files
+  function _G.RunFile()
+    local filetype = vim.bo.filetype
+    local filename = vim.fn.expand('%:t')
+    if filetype == 'java' then
+        -- Compile and Run Java
+        _G.CompileAndRunJava()
+    elseif filetype == 'javascript' then
+        -- Run JavaScript with Node.js
+        vim.cmd('!node ' .. filename)
+    else
+        print("Filetype not supported for <leader>r")
+    end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>r', ':lua RunFile()<CR>', { noremap = true, silent = true })
   
+-- Function to dynamically run Java and JavaScript files
+function _G.RunFile()
+    local filetype = vim.bo.filetype
+    local filename = vim.fn.expand('%:t')
+    if filetype == 'java' then
+        _G.CompileAndRunJava()
+    elseif filetype == 'javascript' then
+        vim.cmd('!node ' .. filename)
+    else
+        print("Filetype not supported for <leader>r")
+    end
+end
+-- Key mappings
+vim.api.nvim_set_keymap('n', '<leader>r', ':lua RunFile()<CR>', { noremap = true, silent = true })
+-- end of Function to dynamically run Java and JavaScript files
 
 -- Key mappings for moving the cursor in insert mode using Ctrl + hjkl
 vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true, silent = true })

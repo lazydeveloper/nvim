@@ -10,5 +10,6 @@ vim.g.bufferline = {
     maximum_padding = 1,
     minimum_padding = 1,
     no_name_title = nil,
+    buffer_index = true,
   }
   

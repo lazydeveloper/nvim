@@ -6,4 +6,4 @@ require('config.barbar')
 require('config.lualine')
 require('config.neotree')
 require('config.terminal')
-
+require('config.dap')

@@ -21,7 +21,11 @@ opt.cursorline = true
 opt.statusline = "%F"  -- %F displays the full file path
 opt.clipboard:append("unnamedplus")
 
-
+-- Enable Ctrl + hjkl on neovim - updated on Dec 13, 2024.
+vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-j>', '<Down>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', {noremap = true, silent = true})
 vim.api.nvim_create_user_command('Refresh', function()
   require('lazy').reload()  -- Reloads Lazy.nvim plugins
   vim.cmd('luafile ~/.config/nvim/init.lua')  -- Reloads init.lua

@@ -144,4 +144,42 @@ require('lazy').setup({
     version = "*",
     config = true,
     },
+
+  -- Nvim Debugging Setting Starts Here 
+  {
+    'mfussenegger/nvim-dap',
+    event = 'BufReadPre', -- Load nvim-dap when a buffer is read
+    config = function()
+      local dap = require('dap')
+      -- Configure adapters and configurations here
+    end,
+  },
+
+  -- nvim-nio dependency
+  {
+    'nvim-neotest/nvim-nio',
+  },
+
+  -- Optional: nvim-dap-ui for a better debugging interface
+  {
+    'rcarriga/nvim-dap-ui',
+    requires = {
+      'mfussenegger/nvim-dap', 
+      'nvim-neotest/nvim-nio',
+    },
+    config = function()
+      require('dapui').setup()
+    end,
+  },
+
+  -- Optional: nvim-dap-virtual-text for inline variable display
+  {
+    'theHamsta/nvim-dap-virtual-text',
+    requires = {'mfussenegger/nvim-dap'},
+    config = function()
+      require('nvim-dap-virtual-text').setup()
+    end,
+  }
+  -- Nvim Debugging Settings End Here
 })
+

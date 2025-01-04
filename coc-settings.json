@@ -16,9 +16,17 @@
       ],
       "filetypes": ["java"], 
       "rootPatterns": [".project", "pom.xml", "build.gradle", ".git", "mvnw", "gradlew"]
-    }
-  },
-  "suggest.autoTrigger": "always",
-  "java.format.enabled": true
+    },
+    "tsserver": {
+      "module": "typescript-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["typescript", "javascript", "javascriptreact", "typescriptreact"]
+      }
+    },  
+    "suggest.autoTrigger": "always",
+    "java.format.enabled": true, 
+    "prettier.enable": true,
+    "eslint.autoFixOnSave": true,
+    "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact"]
 }
 
